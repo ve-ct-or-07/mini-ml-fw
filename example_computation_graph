@@ -1,0 +1,20 @@
+digraph {
+	graph [rankdir=LR]
+	2815029457936 [label="{ data shape=(1, 3) | grad shape=(1, 3) }" shape=record]
+	"2815029457936@" [label="@"]
+	"2815029457936@" -> 2815029457936
+	2814989063312 [label="{ data shape=(2, 3) | grad shape=(2, 3) | weight }" shape=record]
+	2814993716464 [label="{ data shape=(3,) | grad shape=(3,) | bias }" shape=record]
+	2815029458752 [label="{ data shape=(1, 3) | grad shape=(1, 3) }" shape=record]
+	"2815029458752+" [label="+"]
+	"2815029458752+" -> 2815029458752
+	2814988604848 [label="{ data shape=(1, 2) | grad shape=(1, 2) | x }" shape=record]
+	2815029458896 [label="{ data shape=(1, 3) | grad shape=(1, 3) | output }" shape=record]
+	"2815029458896ReLU" [label=ReLU]
+	"2815029458896ReLU" -> 2815029458896
+	2814993716464 -> "2815029458752+"
+	2815029457936 -> "2815029458752+"
+	2814989063312 -> "2815029457936@"
+	2814988604848 -> "2815029457936@"
+	2815029458752 -> "2815029458896ReLU"
+}
